@@ -49,6 +49,7 @@ export default function Toolbar() {
 
   return (
     <aside className="w-60 bg-gray-500 p-4 border-r-2 flex flex-col">
+      <a href="/" className="text-lg font-bold mb-4">🧵 StyleLab</a>
       <h3 className="text-lg font-bold mb-4">Clothing Items</h3>
 
       <div className="flex gap-2 mb-4 flex-wrap">
