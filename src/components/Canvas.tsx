@@ -1,6 +1,7 @@
 "use client";
 import { useDrop } from "react-dnd";
 import { useOutfitStore } from "@/store/outfitStore";
+import type { ClothingItem } from "@/store/outfitStore";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -10,7 +11,7 @@ export default function Canvas() {
 
   const [, drop] = useDrop(() => ({
     accept: "clothing",
-    drop: (item: any, monitor) => {
+    drop: (item: ClothingItem, monitor) => {
       const offset = monitor.getClientOffset();
       if (offset) {
         addItem({ ...item, x: offset.x, y: offset.y });

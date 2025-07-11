@@ -1,8 +1,10 @@
 import { create } from 'zustand';
 
-interface ClothingItem {
+export type ClothingType = 'top' | 'bottom' | 'shoes' | 'accessory';
+
+export interface ClothingItem {
   id: string;
-  type: string;
+  type: ClothingType;
   src: string;
   x: number;
   y: number;

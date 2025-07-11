@@ -3,7 +3,14 @@ import { useDrag } from "react-dnd";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
-const items = [
+type ClothingItem = {
+  id: string;
+  type: "top" | "bottom" | "shoes" | "accessory";
+  src: string;
+};
+
+
+const items : ClothingItem[] = [
   // Tops
   { id: "top1", type: "top", src: "/tops/top1.webp" },
   { id: "top2", type: "top", src: "/tops/top2.jpg" },
@@ -67,7 +74,7 @@ export default function Toolbar() {
   );
 }
 
-function DraggableClothing({ item }: { item: any }) {
+function DraggableClothing({ item }: { item: ClothingItem }) {
   const ref = useRef<HTMLDivElement>(null);
   const [, drag] = useDrag(() => ({
     type: "clothing",
