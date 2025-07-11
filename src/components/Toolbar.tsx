@@ -2,6 +2,7 @@
 import { useDrag } from "react-dnd";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
 
 type ClothingItem = {
   id: string;
@@ -49,7 +50,7 @@ export default function Toolbar() {
 
   return (
     <aside className="w-60 bg-gray-500 p-4 border-r-2 flex flex-col">
-      <a href="/" className="text-lg font-bold mb-4">🧵 StyleLab</a>
+      <Link className="text-lg font-bold mb-4" href="/">🧵 StyleLab</Link>
       <h3 className="text-lg font-bold mb-4">Clothing Items</h3>
 
       <div className="flex gap-2 mb-4 flex-wrap">
